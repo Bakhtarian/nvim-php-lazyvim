@@ -43,14 +43,14 @@ are hardcoded anywhere except as fallback defaults:
 
 - **Project A**: nested `.worktrees/<ticket>/`, sometimes at the umbrella
   level (`my_project/.worktrees/mt-1562/manager`) and sometimes
-  inside the individual repo (`manager/.worktrees/mt-1570-whop-fix`) —
+  inside the individual repo (`manager/.worktrees/mt-1570-payments-fix`) —
   both work, since `discover_worktrees()` reads `git worktree list`
   directly instead of guessing a directory shape.
 - **Project B**: `_worktrees/<ticket>/`, each carrying a full copy of
   `docker-compose.yml` (so Docker resolution finds it before ever reaching
   the main checkout).
-- **Project C**: sibling directories, `Broker-dev3442-<slug>` next to
-  `Broker`.
+- **Project C**: sibling directories, `Core-dev3442-<slug>` next to
+  `Core`.
 
 **Discovering** worktrees never needs configuration — `git worktree list
 --porcelain` is authoritative regardless of which convention produced
@@ -77,7 +77,7 @@ four:
 - **A project whose Compose project name is computed dynamically per
   worktree** (rather than a fixed name, or the directory-basename default):
   add `"project_prefix"` to the marker, e.g.
-  `{"service": "app", "project_prefix": "broker"}`. Every Docker-aware
+  `{"service": "app", "project_prefix": "core"}`. Every Docker-aware
   command then gets an explicit `docker compose -p <prefix>-<slug>`, where
   `<slug>` is the current branch, slugified the same way as (and meant to
   match) a project's own worktree-aware compose wrapper script would.

@@ -35,7 +35,7 @@ end, { desc = "Clear Intelephense's on-disk cache and restart its client(s) (fix
 -- searched across every project under ~/projects without hardcoding any
 -- one project's convention:
 --   - nested (Project B's `_worktrees/<ticket>`, Project A's `.worktrees/<name>`)
---   - sibling directories (Project C's `Broker-dev3442-<slug>` next to `Broker`)
+--   - sibling directories (Project C's `Core-dev3442-<slug>` next to `Core`)
 -- Matching is substring, case-insensitive, against the directory's own
 -- name. `:cd` (not `:lcd`/`:tcd`) so it's a real whole-session move --
 -- explorer, telescope, and terminal all follow. LSP/docker resolution

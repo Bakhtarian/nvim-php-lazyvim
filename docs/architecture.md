@@ -8,8 +8,8 @@ under one umbrella directory, `.worktrees/<ticket>/` convention with a
 generated Docker Compose overlay per worktree), Project B (a Symfony
 microservices monorepo, `services/<name>/` layout, `_worktrees/<ticket>/`
 worktrees that carry a full copy of `docker-compose.yml`), and Project C (a
-Laravel project, sibling-directory worktrees named `Broker-dev3442-<slug>`
-next to `Broker`). None of the code below hardcodes any of these — it's
+Laravel project, sibling-directory worktrees named `Core-dev3442-<slug>`
+next to `Core`). None of the code below hardcodes any of these — it's
 written as a set of conventions it tries in order, so it keeps working
 whichever of these (or a new project entirely) you're actually in.
 
@@ -70,7 +70,7 @@ as separate entries, alongside flat single-repo projects like Project B.
 `git worktree list --porcelain` and reads git's own authoritative answer,
 so it finds worktrees under **any** convention: Project A's nested
 `.worktrees/<ticket>/`, Project B's `_worktrees/<ticket>/`, or Project C's
-sibling `Broker-dev3442-<slug>` next to `Broker`.
+sibling `Core-dev3442-<slug>` next to `Core`.
 
 `create_worktree(project_path, branch)` picks the convention automatically:
 nested `.worktrees/<branch>/` if that directory already exists in the repo
